@@ -1,7 +1,5 @@
 package com.javastaff.tracing.opentelemetrya;
 
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -11,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+
 @RestController
 public class AppAController {
-    
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -22,8 +22,9 @@ public class AppAController {
     	HttpHeaders headers = new HttpHeaders();
     	headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
     	HttpEntity<String> entity = new HttpEntity<>(headers);
-    	String response=restTemplate.exchange("http://opentelemetry-app-b:9082/service", HttpMethod.GET, entity, String.class).getBody();	
-    	
+    	String response=restTemplate.exchange("http://opentelemetry-app-b:9082/service", HttpMethod.GET, entity, String.class).getBody();
+
+
         return "Remote server said: "+response;
     }
 }

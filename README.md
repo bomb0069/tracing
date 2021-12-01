@@ -11,3 +11,7 @@ http://localhost:9081/test-tracing (OpenTelemetry)
 
 
 and finally you can go to http://localhost:16686/search to see traces in Jaeger
+
+## OpenTelemetry Java Reference
+
+[OpenTelemetry SDK Autoconfigure](https://github.com/open-telemetry/opentelemetry-java/blob/main/sdk-extensions/autoconfigure/README.md)

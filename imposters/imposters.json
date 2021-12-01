@@ -1,0 +1,28 @@
+{
+  "port": 9082,
+  "protocol": "http",
+  "name":"authentication",
+  "stubs": [
+      {
+      "responses": [
+        {
+          "proxy": {
+              "to": "http://real-app-b:9083",
+              "addWaitBehavior": true,
+              "predicateGenerators": [
+                {
+                  "matches": {
+                  "path": true,
+                  "query": true,
+                  "body": true,
+                  "headers": true
+                  },
+                  "caseSensitive": true
+                }
+              ]
+          }
+        }
+      ]
+    }
+  ]
+}
